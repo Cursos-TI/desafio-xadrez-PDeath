@@ -4,7 +4,7 @@ int main () {
     
     int i=0, j=0, k;
 
-    printf("Casas em que a torre vai andar:  \n");   
+    printf("Direção em que a torre vai andar:  \n");   
     
     do {
         printf("Direita \n");                   //Direção em que a torre vai andar
@@ -12,14 +12,14 @@ int main () {
     } while (i != 5);                           // enquanto I for diferente de 5, a peça anda para a direita.
 
 
-    printf("\nCasas em que o Bispo vai andar:  \n");
+    printf("\nDireção em que o Bispo vai andar:  \n");
 
     while (j < 5) {                             //Comparação da variavel J com o numero de casa em que o "bispo" deve andar
         printf("Cima, Direita \n");             // Direção
         j++;                                    // Incremento
     }
 
-    printf("\nCasas em que a Rainha vai andar:  \n");
+    printf("\nDireção em que a Rainha vai andar:  \n");
 
     for (k=0; k<8; k++) {                       //Inicialização da variavel K, a comparação com o numero de casa que a rainha dede andar e o incremento
     printf("Esquerda!\n");                      //Direção
@@ -38,6 +38,3 @@ int main () {
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
-
-    return 0;
-}
