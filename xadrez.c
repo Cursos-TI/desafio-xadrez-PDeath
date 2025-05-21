@@ -1,21 +1,32 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+int main () {
+    
+    int i=0, j=0, k;
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    printf("Casas em que a torre vai andar:  \n");   
+    
+    do {
+        printf("Direita \n");                   //Direção em que a torre vai andar
+        i++;                                    // incremento
+    } while (i != 5);                           // enquanto I for diferente de 5, a peça anda para a direita.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    printf("\nCasas em que o Bispo vai andar:  \n");
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    while (j < 5) {                             //Comparação da variavel J com o numero de casa em que o "bispo" deve andar
+        printf("Cima, Direita \n");             // Direção
+        j++;                                    // Incremento
+    }
+
+    printf("\nCasas em que a Rainha vai andar:  \n");
+
+    for (k=0; k<8; k++) {                       //Inicialização da variavel K, a comparação com o numero de casa que a rainha dede andar e o incremento
+    printf("Esquerda!\n");                      //Direção
+    }
+
+    return 0;
+}
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
