@@ -1,44 +1,51 @@
 #include <stdio.h>
 
-int main () {
-    
-    int i=0, j=0, k, l = 1;
-
-    printf("Casas em que a torre vai andar:  \n");   
-    
-    do {
-        printf("Direita \n");                   //Direção em que a torre vai andar
-        i++;                                    // incremento
-    } while (i != 5);                           // enquanto I for diferente de 5, a peça anda para a direita.
-
-
-    printf("\nCasas em que o Bispo vai andar:  \n");
-
-    while (j < 5) {                             //Comparação da variavel J com o numero de casa em que o "bispo" deve andar
-        printf("Cima, Direita \n");             // Direção
-        j++;                                    // Incremento
+void moverTorre (int casa) {
+    if (casa > 0) {                     //Casa está recebendo o valor de 5, e sendo recursivamente chamada até ser menor que zero
+        printf("Direita\n");
+        moverTorre (casa-1);
     }
-
-    printf("\nCasas em que a Rainha vai andar:  \n");
-
-    for (k=0; k<8; k++) {                       //Inicialização da variavel K, a comparação com o numero de casa que a rainha dede andar e o incremento
-    printf("Esquerda!\n");                      //Direção
-    }
-
-    printf("\nCasas em que o Cavalo vai andar:  \n");
-    while (l--) {                               //redução da variavel declarada anteriormente, visto que o cavalo só vai andar uma casa para a esquerda
-        for (int i=1; i <= 2; i++) {           
-            printf("Baixo\n");                  //Sentido que o cavalo vai percorrer antes de virar
-        }
-     printf ("Esquerda\n");
-    }
-
-    return 0;
 }
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+void moverBispo (int casa) {
+    if (casa <= 0) return;             //Aqui fazemos o controle se irá iniciar a função ou não fazendo a comparação da variavel casa sendo maior ou igual a zero
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    for (int i=1; i<=1; i++){                  //Caso a variavel "casa" seja maior ou igual a zero, entramos nos laços aninhados que irão fazer o controle da direção enquanto existir valor em "casa".
+        for (int j=1; j<=1; j++) {
+            printf("Direita, ");
+        }
+        printf (" Cima\n");
+        
+        moverBispo (casa-1);            //Decremento de "casa"
+    }    
+}
+void moverRainha (int casa) {               
+    if (casa > 0) {         //Casa está recebendo o valor de 8, e sendo recursivamente chamada até ser menor que zero
+        printf ("Esquerda\n");
+        moverRainha (casa-1);
+    }
+}
+
+
+void moverCavalo (int casa) {
+    for (int i = 1; i <= casa; i++) {      
+        if (i == 3) break; //  Sai do loop quando i é 3
+        printf("Cima \n");
+    } printf ("Direita");
+}
+
+int main () { 
+    int torre = 5, bispo = 5, cavalo = 2, rainha = 8;   //declaração de variaveis
+    
+    printf("Direacao da Torre: \n");     //chamada das funções
+    moverTorre (torre);
+    printf("\nDireacao do Bispo: \n");
+    moverBispo (bispo);
+    printf("\nDireacao da Rainha: \n");
+    moverRainha(rainha);
+    printf("\nDireacao do Cavalo: \n");
+    moverCavalo(cavalo);
+
+    
+    return 0;
+}
